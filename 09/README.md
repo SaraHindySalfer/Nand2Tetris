@@ -5,5 +5,3 @@ Every floor that is placed exactly above the current floor wins the player with 
 otherwise you get points by the level of exaction.
 
 enjoy
-
-Tamar Weisfish 322654666 and Sara Hindy Salfer 323775676
