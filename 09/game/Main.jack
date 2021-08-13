@@ -1,0 +1,57 @@
+
+/**Main class that handles the whole program */
+class Main { 
+    function void main(){ 
+        var int speed;
+        var int m;
+        var String text;
+        var Game game;
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.printString("                Welcome to Building bricks!");
+        do Output.println();
+        do Output.println();
+        do Output.printString("                  press enter key to start");
+        do Output.println();
+        do Output.println();
+        do Output.printString("                  try to build a building: ");
+        do Output.println(); 
+        do Output.println();
+        do Output.printString("      every floor should be put on top of the last floor");
+        do Output.println();
+        do Output.println();
+        do Output.printString("                  press space key to add a floor");
+        do Output.println();
+        do Output.println();
+        do Output.printString("       there are 3 lives and the points add up by precision");
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.printString("                         enjoy!!");
+        
+        while(~(Keyboard.keyPressed()=128)){
+             
+        }
+        do Screen.clearScreen();
+        do Output.moveCursor(11, 20);
+        
+        //do sys.wait(1);
+        while ((m<1)|(m>6)){
+            do Screen.clearScreen(); 
+            do Output.moveCursor(11, 20);
+            do Output.printString("higher speed is slower game");
+            do Output.println();
+            let m = Keyboard.readInt("                        Enter speed (1-6):");        
+        }
+        do Screen.clearScreen(); 
+        let speed=m;
+        do Screen.clearScreen();
+        do Sys.wait(100);
+        let game=Game.new();
+        do game.run(speed);
+        return;
+    }
+}

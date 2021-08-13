@@ -1,0 +1,415 @@
+/** Class that creates a house object*/
+class House {
+	field int leftHome;
+	field int on;
+
+	/*constructor draws a house*/
+	constructor House new(int leftHome){
+		let leftHome=leftHome;
+        do drawHouse1(leftHome);
+        do drawHouse2(leftHome+1);
+		do drawHouse3(leftHome+2);
+		do drawHouse4(leftHome+3);
+		do drawHouse5(leftHome+512);
+		do drawHouse6(leftHome+513);
+		do drawHouse7(leftHome+514);
+		do drawHouse8(leftHome+515);
+
+        return this;
+    }
+
+	/*destructor*/
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+	/*method that erases the house that was built*/
+	method void erase(int leftHome){
+		let leftHome=leftHome;
+        do eraseHouse1(leftHome);
+        do eraseHouse2(leftHome+1);
+		do eraseHouse3(leftHome+2);
+		do eraseHouse4(leftHome+3);
+		do eraseHouse5(leftHome+512);
+		do eraseHouse6(leftHome+513);
+		do eraseHouse7(leftHome+514);
+		do eraseHouse8(leftHome+515);
+		return;
+	}
+
+	/*draw part 1 of house*/
+    method void drawHouse1(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, -4);
+		do Memory.poke(memAddress+32, -4);
+		do Memory.poke(memAddress+64, 12);
+		do Memory.poke(memAddress+96, 12);
+		do Memory.poke(memAddress+128, 12);
+		do Memory.poke(memAddress+160, -1012);
+		do Memory.poke(memAddress+192, 3084);
+		do Memory.poke(memAddress+224, 3084);
+		do Memory.poke(memAddress+256, 3084);
+		do Memory.poke(memAddress+288, 3084);
+		do Memory.poke(memAddress+320, 3084);
+		do Memory.poke(memAddress+352, -1012);
+		do Memory.poke(memAddress+384, 12);
+		do Memory.poke(memAddress+416, 12);
+		do Memory.poke(memAddress+448, 12);
+		do Memory.poke(memAddress+480, 12);
+		return;
+	}
+
+	/*draw part 2 of house*/
+    method void drawHouse2(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, -1);
+		do Memory.poke(memAddress+32, -1);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, -4093);
+		do Memory.poke(memAddress+192, 12291);
+		do Memory.poke(memAddress+224, 12291);
+		do Memory.poke(memAddress+256, 12291);
+		do Memory.poke(memAddress+288, 12291);
+		do Memory.poke(memAddress+320, 12291);
+		do Memory.poke(memAddress+352, -4093);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+
+	/*draw part 3 of house*/
+	method void drawHouse3(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, -1);
+		do Memory.poke(memAddress+32, -1);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, -16369);
+		do Memory.poke(memAddress+192, -16372);
+		do Memory.poke(memAddress+224, -16372);
+		do Memory.poke(memAddress+256, -16372);
+		do Memory.poke(memAddress+288, -16372);
+		do Memory.poke(memAddress+320, -16372);
+		do Memory.poke(memAddress+352, -16369);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+
+	/*draw part 4 of house*/
+	method void drawHouse4(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 16383);
+		do Memory.poke(memAddress+32, 16383);
+		do Memory.poke(memAddress+64, 12288);
+		do Memory.poke(memAddress+96, 12288);
+		do Memory.poke(memAddress+128, 12288);
+		do Memory.poke(memAddress+160, 12351);
+		do Memory.poke(memAddress+192, 12336);
+		do Memory.poke(memAddress+224, 12336);
+		do Memory.poke(memAddress+256, 12336);
+		do Memory.poke(memAddress+288, 12336);
+		do Memory.poke(memAddress+320, 12336);
+		do Memory.poke(memAddress+352, 12351);
+		do Memory.poke(memAddress+384, 12288);
+		do Memory.poke(memAddress+416, 12288);
+		do Memory.poke(memAddress+448, 12288);
+		do Memory.poke(memAddress+480, 12288);
+		return;
+	}
+			
+	/*draw part 5 of house*/
+	method void drawHouse5(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 12);
+		do Memory.poke(memAddress+32, 12);
+		do Memory.poke(memAddress+64, 12);
+		do Memory.poke(memAddress+96, 12);
+		do Memory.poke(memAddress+128, 12);
+		do Memory.poke(memAddress+160, 12);
+		do Memory.poke(memAddress+192, 12);
+		do Memory.poke(memAddress+224, 12);
+		do Memory.poke(memAddress+256, 12);
+		do Memory.poke(memAddress+288, 12);
+		do Memory.poke(memAddress+320, 12);
+		do Memory.poke(memAddress+352, 12);
+		do Memory.poke(memAddress+384, 12);
+		do Memory.poke(memAddress+416, 12);
+		do Memory.poke(memAddress+448, 12);
+		do Memory.poke(memAddress+480, -4);
+		return;
+	}
+
+	/*draw part 6 of house*/	
+	method void drawHouse6(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, -1024);
+		do Memory.poke(memAddress+160, -1024);
+		do Memory.poke(memAddress+192, 3072);
+		do Memory.poke(memAddress+224, 3072);
+		do Memory.poke(memAddress+256, 3072);
+		do Memory.poke(memAddress+288, 3072);
+		do Memory.poke(memAddress+320, 3072);
+		do Memory.poke(memAddress+352, 3072);
+		do Memory.poke(memAddress+384, 3072);
+		do Memory.poke(memAddress+416, 3072);
+		do Memory.poke(memAddress+448, 3072);
+		do Memory.poke(memAddress+480, 4095);
+		return;
+	}
+		
+	
+	
+
+			
+	/*draw part 7 of house*/
+	method void drawHouse7(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 63);
+		do Memory.poke(memAddress+160, 63);
+		do Memory.poke(memAddress+192, 48);
+		do Memory.poke(memAddress+224, 48);
+		do Memory.poke(memAddress+256, 48);
+		do Memory.poke(memAddress+288, 48);
+		do Memory.poke(memAddress+320, 48);
+		do Memory.poke(memAddress+352, 48);
+		do Memory.poke(memAddress+384, 48);
+		do Memory.poke(memAddress+416, 48);
+		do Memory.poke(memAddress+448, 48);
+		do Memory.poke(memAddress+480, -16);
+		return;
+	}
+			
+	/*draw part 8 of house*/
+	method void drawHouse8(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 12288);
+		do Memory.poke(memAddress+32, 12288);
+		do Memory.poke(memAddress+64, 12288);
+		do Memory.poke(memAddress+96, 12288);
+		do Memory.poke(memAddress+128, 12288);
+		do Memory.poke(memAddress+160, 12288);
+		do Memory.poke(memAddress+192, 12288);
+		do Memory.poke(memAddress+224, 12288);
+		do Memory.poke(memAddress+256, 12288);
+		do Memory.poke(memAddress+288, 12288);
+		do Memory.poke(memAddress+320, 12288);
+		do Memory.poke(memAddress+352, 12288);
+		do Memory.poke(memAddress+384, 12288);
+		do Memory.poke(memAddress+416, 12288);
+		do Memory.poke(memAddress+448, 12288);
+		do Memory.poke(memAddress+480, 16383);
+		return;
+	}
+			
+	/*erase part 1 of house*/
+	method void  eraseHouse1(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, 0);
+		do Memory.poke(memAddress+192, 0);
+		do Memory.poke(memAddress+224, 0);
+		do Memory.poke(memAddress+256, 0);
+		do Memory.poke(memAddress+288, 0);
+		do Memory.poke(memAddress+320, 0);
+		do Memory.poke(memAddress+352, 0);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+    			
+	/*erase part 2 of house*/
+	method void  eraseHouse2(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, 0);
+		do Memory.poke(memAddress+192, 0);
+		do Memory.poke(memAddress+224, 0);
+		do Memory.poke(memAddress+256, 0);
+		do Memory.poke(memAddress+288, 0);
+		do Memory.poke(memAddress+320, 0);
+		do Memory.poke(memAddress+352, 0);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+
+	/*erase part 3 of house*/
+	method void  eraseHouse3(int location) {
+		var int  memAddress;
+
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, 0);
+		do Memory.poke(memAddress+192, 0);
+		do Memory.poke(memAddress+224, 0);
+		do Memory.poke(memAddress+256, 0);
+		do Memory.poke(memAddress+288, 0);
+		do Memory.poke(memAddress+320, 0);
+		do Memory.poke(memAddress+352, 0);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+
+
+	/*erase part 4 of house*/
+	method void  eraseHouse4(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, 0);
+		do Memory.poke(memAddress+192, 0);
+		do Memory.poke(memAddress+224, 0);
+		do Memory.poke(memAddress+256, 0);
+		do Memory.poke(memAddress+288, 0);
+		do Memory.poke(memAddress+320, 0);
+		do Memory.poke(memAddress+352, 0);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+
+	/*erase part 5 of house*/
+	method void  eraseHouse5(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, 0);
+		do Memory.poke(memAddress+192, 0);
+		do Memory.poke(memAddress+224, 0);
+		do Memory.poke(memAddress+256, 0);
+		do Memory.poke(memAddress+288, 0);
+		do Memory.poke(memAddress+320, 0);
+		do Memory.poke(memAddress+352, 0);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+				
+	/*erase part 6 of house*/
+	method void  eraseHouse6(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, 0);
+		do Memory.poke(memAddress+192, 0);
+		do Memory.poke(memAddress+224, 0);
+		do Memory.poke(memAddress+256, 0);
+		do Memory.poke(memAddress+288, 0);
+		do Memory.poke(memAddress+320, 0);
+		do Memory.poke(memAddress+352, 0);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+
+	/*erase part 7 of house*/
+	method void  eraseHouse7(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32, 0);
+		do Memory.poke(memAddress+64, 0);
+		do Memory.poke(memAddress+96, 0);
+		do Memory.poke(memAddress+128, 0);
+		do Memory.poke(memAddress+160, 0);
+		do Memory.poke(memAddress+192, 0);
+		do Memory.poke(memAddress+224, 0);
+		do Memory.poke(memAddress+256, 0);
+		do Memory.poke(memAddress+288, 0);
+		do Memory.poke(memAddress+320, 0);
+		do Memory.poke(memAddress+352, 0);
+		do Memory.poke(memAddress+384, 0);
+		do Memory.poke(memAddress+416, 0);
+		do Memory.poke(memAddress+448, 0);
+		do Memory.poke(memAddress+480, 0);
+		return;
+	}
+				
+	/*erase part 8 of house*/
+	method void eraseHouse8(int location) {
+		var int  memAddress;
+		let memAddress = 16384+location;
+		do Memory.poke(memAddress+0, 0);
+		do Memory.poke(memAddress+32,  0);
+		do Memory.poke(memAddress+64,  0);
+		do Memory.poke(memAddress+96,  0);
+		do Memory.poke(memAddress+128,  0);
+		do Memory.poke(memAddress+160,  0);
+		do Memory.poke(memAddress+192,  0);
+		do Memory.poke(memAddress+224,  0);
+		do Memory.poke(memAddress+256,  0);
+		do Memory.poke(memAddress+288,  0);
+		do Memory.poke(memAddress+320,  0);
+		do Memory.poke(memAddress+352,  0);
+		do Memory.poke(memAddress+384,  0);
+		do Memory.poke(memAddress+416,  0);
+		do Memory.poke(memAddress+448,  0);
+		do Memory.poke(memAddress+480,  0);
+		return;
+	}
+
+}

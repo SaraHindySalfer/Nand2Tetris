@@ -1,0 +1,220 @@
+/**
+    Class that runs the actual game
+*/
+class Game {
+    field House house;
+    field TextRow textRow;
+    field int number,indexRemove;
+    field int i;
+    field int tvach,newNumber;
+    field int count;
+    field int temp,time6;
+    field int xLast;
+    field boolean isOn;
+    field Array array;
+    field int points,lives,speed;
+
+    /* constructor*/
+    constructor Game new(){
+        let count=1;
+        return this;
+    }
+
+
+    /*destructor*/
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    /*method that sets the game up and runs it*/
+    method  void run(int speed){
+        let lives=3;
+        let textRow=TextRow.new();
+        let points=0;
+        let indexRemove=0;
+        let array=Array.new(6);
+        let array[0]=6734;
+        let time6=1;
+        let isOn=true;
+        let xLast=14;
+        let count=32;
+        let number=6734; 
+        let speed=speed;
+        let house=House.new(number);
+        do Screen.drawLine(0,242,511,242);
+        do Screen.drawLine(0,243,511,243);
+        do Screen.drawLine(459,50,459,200);
+        let number=0;
+        let newNumber=0;
+        let tvach=0;
+        let speed=Math.multiply(speed,7);
+        if(speed<100){
+            let speed=speed;
+        }
+        if(speed>99){
+            let speed=100;
+        }
+        while (isOn) {
+            if(points>100){
+                do win();
+            }
+            
+            while (tvach<25) {
+                if(~(isOn)){
+                    let tvach=32;
+                }
+                let i=0;
+                while(i<(speed)){
+                    let i=i+1;
+                }
+                do Sys.wait(speed);
+                if(Keyboard.keyPressed()=32){
+                   if(time6<6){
+                       let indexRemove=time6;
+                   }else{
+                       do updateArray();
+                   }
+                   let time6=time6+1;
+                    do throwHouse(tvach);
+                    do Sys.wait(2);
+                }
+                if(tvach=0){
+                    let house=house.erase(24);
+                }
+                let number=tvach;
+                if(number=0){
+                    let newNumber=511;
+                }
+                else{
+                    if(number=1){
+                        let  newNumber=0;
+                    }
+                    else{
+                        let newNumber=number-1;
+                    }
+                }
+                if(~(isOn)){
+                    let tvach=32;
+                }
+                if(isOn){
+                    let house=house.erase(newNumber);
+                    let house=House.new(number);
+                }
+                let tvach=tvach+1;
+            }
+            let tvach=0;
+        } return;
+    }
+    
+    /*method that sets the house position on top of other house*/
+    method void throwHouse(int num){
+        var int X,Y;
+        let Y = 2;
+        let X = num;
+        while(Y <(210-count)){
+            if(~(Y=2)){
+                do house.erase((Y*32) + (X));
+            }
+            let Y = Y + 2;
+            let house=House.new((Y*32) + (X));
+            do Sys.wait(2);
+        }
+        let array[indexRemove]=(Y*32) +X;
+        if(((xLast-4)<num)&(num<(xLast+4))){
+            if(xLast=num){
+                let points=points+4;
+                do textRow.addpoints(points);
+            }else{
+                if(((xLast-1)<num)&(num<(xLast+1))){
+                   let  points=points+3;
+                   do textRow.addpoints(points);
+                }else{
+                    if(((xLast-2)<num)&(num<(xLast+2))){
+                        let points=points+2;
+                        do textRow.addpoints(points);
+                    }else{
+                       let points=points+1;
+                       do textRow.addpoints(points);
+                    }
+                }
+            }
+            if(count<160){
+                 let count=count+32;
+            }
+            let xLast=num;
+            return;
+        }
+        else{
+            do house.erase((Y*32) +X);
+            let house=House.new((Y*32) + xLast);
+            let array[indexRemove]=(Y*32) + xLast;
+            do gameOver();  
+            if(count<160){
+               let count=count+32;
+            } 
+        }
+        return;    
+    }
+    /*method that gets called when game is over*/
+    method void gameOver(){
+        if(lives>0){
+            do textRow.removeOne(lives);
+           let  lives=lives-1;
+            return;
+        }
+        let isOn=false;
+        do Screen.setColor(true);
+        do Screen.clearScreen();
+        do Sys.wait(5);
+        do Output.printString("                          game over :(");
+        do Sys.wait(15);
+        do Sys.halt();
+        return;
+    }
+    /*method that gets called when there is a win (more than a 100 points)*/
+    method void win(){
+        let isOn=false;
+        do Screen.setColor(true);
+        do Screen.clearScreen();
+        do Sys.wait(5);
+        do Output.printString("                         you won :)");
+        do Sys.wait(15);
+        do Sys.halt();
+        return;
+    }
+    /*method that updates the array of current houses */
+    method void updateArray(){
+        var int large,mone,largeIndex, i;
+        let large=0;
+        let largeIndex=0;
+        let mone=0;
+        while(mone<6){
+            if(large<array[mone]){
+                let large=array[mone];
+                let largeIndex=mone;
+            }
+            let mone=mone+1;
+        }
+        let indexRemove= largeIndex;
+        let mone=largeIndex;
+        let i = 0;
+        while(i<6){
+            if(~(mone=largeIndex)){
+                do house.erase(array[mone]);
+              let  array[mone]=array[mone]+1024;
+              let house=House.new(array[mone]);
+            }
+            if (mone=largeIndex){
+                do house.erase(array[mone]);
+            }
+           let mone=mone+1;
+           let i = i+1;
+           if (mone = 6){
+               let mone = 0;
+           }
+        }
+        let array[largeIndex]=0;
+        return;
+    }
+}

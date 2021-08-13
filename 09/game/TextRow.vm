@@ -1,0 +1,334 @@
+function TextRow.new 0
+push constant 1
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 0
+push constant 4
+push constant 58
+call Output.moveCursor 2
+pop temp 0
+push constant 5
+call String.new 1
+push constant 108
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push pointer 0
+push constant 2142
+call TextRow.HouseLife 2
+pop temp 0
+push pointer 0
+push constant 2654
+call TextRow.HouseLife 2
+pop temp 0
+push pointer 0
+push constant 3166
+call TextRow.HouseLife 2
+pop temp 0
+push constant 12
+push constant 58
+call Output.moveCursor 2
+pop temp 0
+push constant 6
+call String.new 1
+push constant 112
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 115
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 14
+push constant 60
+call Output.moveCursor 2
+pop temp 0
+push constant 0
+call Output.printInt 1
+pop temp 0
+push pointer 0
+return
+function TextRow.addpoints 0
+push argument 0
+pop pointer 0
+push constant 14
+push constant 60
+call Output.moveCursor 2
+pop temp 0
+push argument 1
+call Output.printInt 1
+pop temp 0
+push constant 0
+return
+function TextRow.removeOne 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+push constant 3166
+call TextRow.eraseLife 2
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push constant 2654
+call TextRow.eraseLife 2
+pop temp 0
+goto IF_END1
+label IF_FALSE1
+push pointer 0
+push constant 2142
+call TextRow.eraseLife 2
+pop temp 0
+label IF_END1
+label IF_END0
+push constant 0
+return
+function TextRow.HouseLife 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 128
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 448
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 992
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 2032
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 4088
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 8188
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+call Output.println 0
+pop temp 0
+push constant 0
+return
+function TextRow.eraseLife 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+call Output.println 0
+pop temp 0
+push constant 0
+return
+function TextRow.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

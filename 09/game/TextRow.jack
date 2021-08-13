@@ -1,0 +1,93 @@
+/**class that handles bar on side of screen*/
+
+class TextRow{
+    field int position;
+
+    constructor TextRow new(){
+        let position=0;
+        do Output.moveCursor(4,58);
+        do Output.printString("lives");
+        
+        do HouseLife(2142);
+        do HouseLife(2654);
+        do HouseLife(3166);
+        do Output.moveCursor(12,58);
+        do Output.printString("points");
+        do Output.moveCursor(14,60);
+        do Output.printInt(0);
+        return this;
+    }
+    /*prints current points to board*/
+    method void addpoints(int points){
+        do Output.moveCursor(14,60);
+        do Output.printInt(points);
+
+        return;
+    }
+    /*erases a life from board*/
+    method void removeOne(int number){
+        if (number=3){
+            do eraseLife(3166);
+        }else{
+            if(number=2){
+                do eraseLife(2654);
+            }else{
+                do  eraseLife(2142);
+            }
+        }
+        return;
+    }
+    /*draws a house that is used as a life in the game*/
+    method void HouseLife(int location) {
+        var int  memAddress;
+        let memAddress = 16384+location;
+        do Memory.poke(memAddress+0, 128);
+        do Memory.poke(memAddress+32, 448);
+        do Memory.poke(memAddress+64, 992);
+        do Memory.poke(memAddress+96, 2032);
+        do Memory.poke(memAddress+128, 4088);
+        do Memory.poke(memAddress+160, 8188);
+        do Memory.poke(memAddress+192, 0);
+        do Memory.poke(memAddress+224, 32767);
+        do Memory.poke(memAddress+256, 32767);
+        do Memory.poke(memAddress+288, 32767);
+        do Memory.poke(memAddress+320, 32767);
+        do Memory.poke(memAddress+352, 32767);
+        do Memory.poke(memAddress+384, 32767);
+        do Memory.poke(memAddress+416, 32767);
+        do Memory.poke(memAddress+448, 32767);
+        do Memory.poke(memAddress+480, 32767);
+        do Output.println();
+        return;
+    }
+    /*erases a house that is used as a life in the game*/
+    method void eraseLife(int location) {
+        var int  memAddress;
+        let memAddress = 16384+location;
+        do Memory.poke(memAddress+0, 0);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 0);
+        do Memory.poke(memAddress+96, 0);
+        do Memory.poke(memAddress+128, 0);
+        do Memory.poke(memAddress+160, 0);
+        do Memory.poke(memAddress+192, 0);
+        do Memory.poke(memAddress+224, 0);
+        do Memory.poke(memAddress+256, 0);
+        do Memory.poke(memAddress+288, 0);
+        do Memory.poke(memAddress+320, 0);
+        do Memory.poke(memAddress+352, 0);
+        do Memory.poke(memAddress+384, 0);
+        do Memory.poke(memAddress+416, 0);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+        do Output.println();
+        return;
+    }
+    
+    /*destructor*/
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+}
